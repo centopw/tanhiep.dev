@@ -1,5 +1,7 @@
 # tanhiep.dev
 
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/centopw/tanhiep.dev/blob/main/LICENSE)
+
 My personal profolio creat using ReactJS
 
 
