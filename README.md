@@ -1,7 +1,5 @@
 # tanhiep.dev
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/centopw/tanhiep.dev/blob/main/LICENSE)
-
 My personal profolio creat using ReactJS
 
 
@@ -48,6 +46,7 @@ To run the development server, use the following command:
   ```
 
 This will start a local development server and open the website in your default web browser. The website will automatically reload whenever you make changes to the source files.
+
 
 ## Acknowledgements
 
