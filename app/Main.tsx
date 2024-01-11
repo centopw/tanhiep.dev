@@ -16,7 +16,7 @@ export default function Home({ posts }) {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#E5D3B8] to-[#c2a596] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -27,22 +27,22 @@ export default function Home({ posts }) {
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight dark:text-white sm:text-6xl">
               Xin chào 👋 <br />
-              Mình là <span className="text-primary-500">Hiệp Nguyễn</span>
+              Mình là <span className="text-orange-300">Hiệp Nguyễn</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-200">
+            <p className="mt-6 text-lg leading-8 text-gray-600  dark:text-gray-200">
               Mình là một lập trình viên, mình thích viết blog để chia sẻ những kiến thức về lập
               trình và những thứ khác!.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="/blog"
-                className="rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Tất cả bài viết
               </a>
               <a
                 href="/about"
-                className="text-sm font-semibold leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                className="border-b-2 border-transparent text-sm font-semibold leading-6 text-orange-300 hover:border-orange-200 hover:text-orange-200"
               >
                 CV của mình<span aria-hidden="true">→</span>
               </a>
@@ -54,7 +54,7 @@ export default function Home({ posts }) {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#E5D3B8] to-[#aae699] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -110,7 +110,7 @@ export default function Home({ posts }) {
                       <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          className="text-orange-300 hover:text-orange-200"
                           aria-label={`Read more: "${title}"`}
                         >
                           Read more &rarr;
@@ -128,7 +128,7 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            className="text-orange-300 hover:text-orange-200"
             aria-label="All posts"
           >
             All Posts &rarr;
