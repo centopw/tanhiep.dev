@@ -7,12 +7,13 @@ const CustomLink = ({ href, ...rest }: LinkProps & AnchorHTMLAttributes<HTMLAnch
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
 
+  const hrefWithRef = href && `${href}?ref=tanhiep.dev`
   if (isInternalLink) {
-    return <Link href={href} {...rest} />
+    return <Link href={hrefWithRef} {...rest} />
   }
 
   if (isAnchorLink) {
-    return <a href={href} {...rest} />
+    return <a href={hrefWithRef} {...rest} />
   }
 
   return <a target="_blank" rel="noopener noreferrer" href={href} {...rest} />

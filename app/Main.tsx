@@ -9,7 +9,6 @@ export default function Home({ posts }) {
   return (
     <>
       <Hero />
-      {/* Lastest Blog Section */}
       <LastestPost posts={posts} />
       {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">
