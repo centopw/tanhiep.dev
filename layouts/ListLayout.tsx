@@ -9,6 +9,7 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import Image from 'next/image'
+import { Search } from 'lucide-react'
 interface PaginationProps {
   totalPages: number
   currentPage: number
@@ -78,14 +79,12 @@ export default function ListLayout({
 
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 text-center md:space-y-5">
-          <h1 className="text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 ">
+      <div className="divide-accent-foreground dark:divide-accent divide-y">
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
+          <h1 className="text-foreground text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
-
           <div className="relative w-full">
-            {' '}
             <label>
               <span className="sr-only">Search articles</span>
               <input
@@ -93,37 +92,24 @@ export default function ListLayout({
                 type="text"
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Search articles"
-                className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-orange-300 focus:ring-orange-300 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
+                className="border-muted-foreground text-muted-foreground focus:border-primary dark:border-muted block w-full rounded-md border bg-black px-4 py-2 focus:ring-orange-100"
               />
             </label>
-            <svg
-              className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <Search className="text-muted-foreground absolute right-3 top-3 h-5 w-5" />
           </div>
         </div>
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post) => {
-            const { path, date, title, summary, tags, images } = post
+            const { slug, path, date, title, summary, tags, images } = post
             const displayImage =
               images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
             return (
-              <li key={path} className="space-x-2 py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+              <li key={path} className="py-4">
+                <article className="space-y-2 xl:grid xl:grid-cols-5 xl:items-start xl:gap-4 xl:space-y-0">
                   <div className="xl:col-span-2">
                     <Image
-                      src={displayImage || ' '}
+                      src={displayImage || ''}
                       alt={`${title} thumbnail`}
                       height="0"
                       width="0"
@@ -131,30 +117,26 @@ export default function ListLayout({
                       unoptimized
                     />
                   </div>
-
                   <div className="space-y-3 xl:col-span-3">
                     <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link
-                          href={`/${path}`}
-                          className="border-b-2 border-transparent text-gray-900 hover:border-gray-300 hover:text-gray-300 dark:text-gray-100"
-                        >
+                      <h3 className="mb-2 text-2xl font-bold leading-8 tracking-tight">
+                        <Link href={`/${path}`} className="text-foreground">
                           {title}
                         </Link>
                       </h3>
-                      <div className="flex flex-wrap">
+                      <div className="flex flex-wrap space-x-3">
                         {tags?.map((tag) => <Tag key={tag} text={tag} />)}
                       </div>
                     </div>
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                      {summary}
+                    <div className="text-muted-foreground prose prose-sm max-w-none">{summary}</div>
+                    <div>
+                      <dl>
+                        <dt className="sr-only">Published on</dt>
+                        <dd className="text-muted-foreground flex gap-1 text-base font-medium leading-6">
+                          <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                        </dd>
+                      </dl>
                     </div>
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-normal leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                      </dd>
-                    </dl>
                   </div>
                 </article>
               </li>
