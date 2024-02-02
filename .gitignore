@@ -45,7 +45,3 @@ yarn-error.log*
 
 # Contentlayer
 .contentlayer
-
-# Lock files
-yarn.lock
-package-lock.json
