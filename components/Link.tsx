@@ -4,10 +4,10 @@ import type { LinkProps } from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
 
 const CustomLink = ({ href, ...rest }: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>) => {
-  const isInternalLink = href && href.startsWith('/')
-  const isAnchorLink = href && href.startsWith('#')
+  const isInternalLink = href?.startsWith('/')
+  const isAnchorLink = href?.startsWith('#')
 
-  const hrefWithRef = href && `${href}?ref=tanhiep.dev`
+  const hrefWithRef = href && `${href}`
   if (isInternalLink) {
     return <Link href={hrefWithRef} {...rest} />
   }

@@ -10,6 +10,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import Bleed from 'pliny/ui/Bleed'
+import { useMemo } from 'react'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>
@@ -32,9 +33,13 @@ interface LayoutProps {
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
   const { filePath, path, slug, date, title, tags, images } = content
-  const displayImage =
-    images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
-  const basePath = path.split('/')[0]
+  const displayImage = useMemo(() => {
+    return images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
+  }, [images])
+
+  const basePath = useMemo(() => {
+    return path.split('/')[0]
+  }, [path])
 
   return (
     <SectionContainer>
@@ -89,7 +94,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                           {author.github && (
                             <Link
                               href={author.github}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              className="text-orange-300 hover:text-orange-200"
                             >
                               {author.github.replace('https://github.com/', '@')}
                             </Link>
@@ -140,7 +145,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Previous Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-orange-300 hover:text-orange-200">
                           <Link href={`/${prev.path}`}>{prev.title}</Link>
                         </div>
                       </div>
@@ -150,7 +155,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Next Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-orange-300 hover:text-orange-200">
                           <Link href={`/${next.path}`}>{next.title}</Link>
                         </div>
                       </div>
@@ -161,7 +166,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               <div className="pt-4 xl:pt-8">
                 <Link
                   href={`/${basePath}`}
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="text-orange-300 hover:text-orange-200"
                   aria-label="Back to the blog"
                 >
                   &larr; Back to the blog

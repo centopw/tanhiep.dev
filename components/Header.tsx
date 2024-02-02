@@ -1,46 +1,48 @@
-import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
 import Link from './Link'
 import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
-import SearchButton from './SearchButton'
-
+import Image from './Image'
 const Header = () => {
   return (
-    <header className="supports-[backdrop-filter]:bg-background/60 bg-background/95 fixed left-0 right-0 top-0 z-50 h-14 w-full backdrop-blur md:block md:h-[4.1rem]">
-      <div className="mx-auto flex h-full max-w-[100rem] items-center justify-between p-4">
-        <div>
-          <Link href="/" aria-label={siteMetadata.headerTitle}>
-            <div className="flex items-center justify-between">
-              <div className="mr-3 h-6 font-serif text-xl font-bold sm:block">
-                {siteMetadata.headerTitle}
-              </div>
+    <header className="fixed left-0 right-0 top-0 z-50 mt-0 w-full md:mt-4">
+      <div className="mx-auto flex h-full max-w-[100rem] items-center space-x-1 p-4">
+        {/* Left */}
+        <div className="flex flex-auto justify-start md:justify-end">
+          <Link href="/">
+            <div className="justify-center rounded-full border-2 border-white border-opacity-10 p-1 align-middle backdrop-blur-md backdrop-brightness-75 backdrop-contrast-125 backdrop-saturate-150">
+              <Image src="/static/logo-mark-red_500.svg" alt="logo" width={40} height={40} />
             </div>
           </Link>
         </div>
-        <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
-          <ul className="flex items-center space-x-4">
-            {headerNavLinks
-              .filter((link) => link.href !== '/')
-              .map((link) => (
-                <li key={link.title} className="bg-opacity-1 rounded-md p-3 hover:bg-gray-800">
-                  <a
+        {/* Center */}
+        <div className="hidden items-center justify-center md:flex">
+          <div className="rounded-full border-2 border-white border-opacity-10 px-5 py-3 backdrop-blur-md backdrop-brightness-75 backdrop-contrast-125 backdrop-saturate-150">
+            <ul className="flex items-center justify-center space-x-10">
+              {headerNavLinks.map((link) => (
+                <li key={link.title} className="border-b-2 border-transparent hover:border-white">
+                  <Link
                     href={link.href}
                     className="hidden font-medium text-gray-900 dark:text-gray-100 sm:block"
                   >
                     {link.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
-            <li>
-              <SearchButton />
-            </li>
-            <li>
-              <ThemeSwitch />
-            </li>
-          </ul>
-          <MobileNav />
+            </ul>
+          </div>
+        </div>
+
+        {/* Right */}
+        <div className="flex flex-auto items-center justify-end md:justify-start">
+          <div className="">
+            <Link
+              href="https://tanhiep.dev"
+              className="hidden rounded-full border-2 border-white border-opacity-10 bg-red-500 px-5 py-2 hover:bg-red-400 md:flex"
+            >
+              Contact
+            </Link>
+            <MobileNav />
+          </div>
         </div>
       </div>
     </header>
