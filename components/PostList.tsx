@@ -19,10 +19,10 @@ export default function PostList({ displayPosts }) {
                 <Image
                   src={displayImage || ''}
                   alt={`${title} thumbnail`}
-                  height={400} // specify the height
-                  width={800} // specify the width
-                  objectFit="cover" // maintain aspect ratio and crop to fill the box
-                  objectPosition="center" // center the image within the box
+                  height={400}
+                  width={800}
+                  objectFit="cover"
+                  objectPosition="center"
                   className="mb-4 rounded-md"
                   unoptimized
                 />

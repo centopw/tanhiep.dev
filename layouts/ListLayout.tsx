@@ -90,7 +90,9 @@ export default function ListLayout({
             {title}
           </h1>
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-          <TagList tagCounts={tagCounts} />
+          <div className="rounded-xl border-2 border-white border-opacity-20 bg-black p-2">
+            <TagList tagCounts={tagCounts} />
+          </div>
         </div>
         <PostList displayPosts={displayPosts} />
       </div>

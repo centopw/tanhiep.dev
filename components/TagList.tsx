@@ -14,7 +14,7 @@ export default function TagList({ tagCounts }) {
           <Tag text={t} />
           <Link
             href={`/tags/${slug(t)}`}
-            className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
+            className="text-sm font-semibold uppercase "
             aria-label={`View posts tagged ${t}`}
           >
             {` (${tagCounts[t]})`}
