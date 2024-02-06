@@ -92,10 +92,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <dt className="sr-only">Twitter</dt>
                         <dd>
                           {author.github && (
-                            <Link
-                              href={author.github}
-                              className="text-orange-300 hover:text-orange-200"
-                            >
+                            <Link href={author.github} className="text-red-500 hover:text-red-400">
                               {author.github.replace('https://github.com/', '@')}
                             </Link>
                           )}
@@ -145,7 +142,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Previous Article
                         </h2>
-                        <div className="text-orange-300 hover:text-orange-200">
+                        <div className="text-red-500 hover:text-red-400">
                           <Link href={`/${prev.path}`}>{prev.title}</Link>
                         </div>
                       </div>
@@ -155,7 +152,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           Next Article
                         </h2>
-                        <div className="text-orange-300 hover:text-orange-200">
+                        <div className="text-red-500 hover:text-red-400">
                           <Link href={`/${next.path}`}>{next.title}</Link>
                         </div>
                       </div>
@@ -166,7 +163,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               <div className="pt-4 xl:pt-8">
                 <Link
                   href={`/${basePath}`}
-                  className="text-orange-300 hover:text-orange-200"
+                  className="text-red-500 hover:text-red-400"
                   aria-label="Back to the blog"
                 >
                   &larr; Back to the blog

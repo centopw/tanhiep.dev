@@ -11,7 +11,7 @@ export default function TagList({ tagCounts }) {
       {tagKeys.length === 0 && 'No tags found.'}
       {sortedTags.map((t) => (
         <div key={t} className="mb-2 mr-5 mt-2">
-          <Tag text={t} />
+          #<Tag text={t} />
           <Link
             href={`/tags/${slug(t)}`}
             className="text-sm font-semibold uppercase "

@@ -13,7 +13,6 @@ import PostBanner from '@/layouts/PostBanner'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
-import RichTextEditor from '@/components/RichTextEditor'
 const defaultLayout = 'PostLayout'
 const layouts = {
   PostSimple,

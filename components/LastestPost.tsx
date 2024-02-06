@@ -54,7 +54,7 @@ export default function LastestPost({ posts }) {
                       <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-orange-300 hover:text-orange-200"
+                          className="text-red-500 hover:text-red-400"
                           aria-label={`Read more: "${title}"`}
                         >
                           Read more &rarr;
@@ -70,11 +70,7 @@ export default function LastestPost({ posts }) {
       </div>
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
-          <Link
-            href="/blog"
-            className="text-orange-300 hover:text-orange-200"
-            aria-label="All posts"
-          >
+          <Link href="/blog" className="text-red-500 hover:text-red-400" aria-label="All posts">
             All Posts &rarr;
           </Link>
         </div>
