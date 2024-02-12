@@ -1,0 +1,67 @@
+---
+title: 'hướng dẫn cài đặt proxmox'
+date: '2024-01-05'
+lastmod: '2024-01-05'
+tags: ['Mã nguồn mở']
+draft: false
+summary: 'Trí tuệ nhân tạo ngày nay đang ngày càng trở nên phổ biến, đặt ra nhu cầu sử dụng AI cao. Để giảm yêu cầu phần cứng và tối ưu hiệu suất, Lượng tử hoá là phương pháp hiệu quả. Mặc dù giảm độ chính xác là một thách thức'
+images: ['/static/images/twitter-card.png']
+---
+
+## Giới thiệu
+
+Ngày nay nhu cầu sử dụng các công cụ Trí tuệ nhân tạo (AI) vào đợi sống hằng ngày càng nhiều. Từ việc giúp chúng ta chụp ảnh đẹp hơn, nâng cao bảo mật, cá nhân hoá những câu trả lời để phù hợp với từng trường hợp,... Nhu cầu sử dụng AI ngày càng một lớn, những doanh nghiệp lớn đã phải đầu tư hằng ngàn đô la vào những dự án, cơ sở hạ tầng để có thể đảm bảo đáp ứng nhu cầu của những công cụ này. Và yêu cầu của những hệ thống này không hề nhỏ, nó không phải là thứ mà các công ty vừa mà nhỏ có thể đáp ứng được.
+<TOCInline toc={props.toc} exclude="Giới thiệu" />
+
+## Hướng Dẫn Cài Đặt Proxmox
+
+Trong phần đầu của loạt bài hướng dẫn về Proxmox, hãy tìm hiểu cách cài đặt Proxmox và truy cập nó qua trình duyệt web.
+
+Proxmox là một trong những hypervisor ưa thích của mình vì tính linh hoạt, vì là open source software nên bạn có thể sử dụng phần mền này mà không cần trả phí, và nó khá dễ sử dụng (dễ hơn so với các hypervisor như VMware ESXi hoặc Hyper-V).
+
+Nó là một hypervisor loại 1, có nghĩa là nó nằm trực tiếp trên phần cứng khác với virt-manager.
+
+Nói một cách đơn giản, bạn sẽ cài đặt Proxmox như một hệ điều hành độc lập trên hệ thống của bạn. Sau đó, bạn có thể sử dụng nó để tạo máy ảo trên cùng hệ thống đó. Khi đã cài đặt, bạn có thể sử dụng Proxmox từ trình duyệt web để quản lý các máy ảo.
+
+Trong phần đầu tiên của loạt bài này, mình sẽ chỉ bạn cách triển khai Proxmox. Sau đó, ở các phần sau, bạn sẽ khám phá cách tạo cả máy ảo và container trong Proxmox, cùng với một số tính năng phức tạp như gom cụm để đảm bảo tính sẵn có cao (high availability).
+
+## Yêu Cầu.
+
+Trước khi chúng ta bắt đầu cài đặt, hãy chắc chắn bạn có những thứ sau:
+
+- Máy tính (để tạo Bootable USB cho Proxmox).
+- Internet (để tải xuống các file cần thiết).
+- Một USB có dung lượng ít nhất 4 GB.
+- PC hoặc server bạn muốn cài proxmox lên.
+
+## Bước 1: Tạo Bootable USB Cho Proxmox
+
+1. Tải xuống Proxmox ISO từ [đây](https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso).
+2. Tải xuống và cài đặt Balena Etcher từ [trang web chính thức](https://etcher.balena.io/#download-etcher).
+3. Chạy Etcher, chọn "Flash from File," và chọn tệp ISO Proxmox bạn đã tải xuống trước đó.
+4. Chọn USB làm mục tiêu và nhấp vào "Flash."
+5. Chờ quá trình hoàn tất.
+
+## Bước 2: Cài Đặt Proxmox
+
+1. Cắm USB vào thiết bị bạn muốn cài đặt proxmox.
+2. Khởi động từ USB bằng cách truy cập menu khởi động (mỗi máy sẽ có tổ hợp phím khác nhau nhưng đa số bạn có thể bấm phím Del, F2 hoặc F10 khi máy đang khởi động).
+3. Chọn "Install Proxmox VE" và làm theo các hướng dẫn trên màn hình.
+4. Đồng ý với EULA và chọn nơi cài đặt Proxmox.
+5. Cấu hình bàn phím, múi giờ, mật khẩu root và địa chỉ email cho thông báo.
+6. Thiết lập thông tin mạng (sử dụng DHCP hoặc IP tĩnh).
+7. Xem xét và xác nhận cấu hình cài đặt.
+8. Nhấp vào "Install" và đợi quá trình cài đặt hoàn tất.
+
+## Bước 3: Truy Cập Proxmox
+
+1. Sau khi cài đặt xong, đăng nhập với mật khẩu root tại dòng lệnh Debian Linux.
+2. Truy cập Proxmox qua trình duyệt web bằng URL được cung cấp
+
+```
+   https://localhost:8006/
+```
+
+Bạn đã cài đặt thành công Proxmox! Trong phần tiếp theo của loạt bài này, chúng ta sẽ khám phá cách tạo máy ảo và container trong Proxmox.
+
+Hãy thưởng thức quản lý máy chủ của bạn với giao diện web thân thiện của Proxmox!

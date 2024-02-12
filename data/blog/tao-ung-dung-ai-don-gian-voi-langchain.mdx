@@ -1,0 +1,50 @@
+---
+title: 'Tạo ứng dụng dùng AI đơn giản với LangChain.'
+date: '2023-12-30'
+lastmod: '2024-02-05'
+tags: ['Mã nguồn mở', 'Trí tuệ nhân tạo']
+draft: false
+summary: 'Trong bài Ollama: chatGPT chạy trên máy của bạn, các bạn đã cài đặt thành công Ollama lên máy tính của mình. Còn hôm nay chúng ta sẽ tìm hiểu về một công cụ cực kỳ hữu ích đối với các nhà phát triển - LangChain, một framework mạnh mẽ dành cho việc tạo ứng dụng dựa trên các mô hình ngôn ngữ lớn (LLMs).'
+images: ['https://images.unsplash.com/photo-1675023071143-e4d3b1d434a2?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D']
+---
+
+## Giới thiệu
+
+Trong bài Ollama: chatGPT chạy trên máy của bạn, các bạn đã cài đặt thành công Ollama lên máy tính của mình. Còn hôm nay chúng ta sẽ tìm hiểu về một công cụ cực kỳ hữu ích đối với các nhà phát triển - LangChain, một framework mạnh mẽ dành cho việc tạo ứng dụng dựa trên các mô hình ngôn ngữ lớn (LLMs). Đây không chỉ là công cụ giúp tối ưu hóa việc xử lý dữ liệu lớn mà còn là bước đệm giúp các chatbot AI, hệ thống trả lời câu hỏi đa năng, và công cụ tóm tắt ngôn ngữ thông minh hơn. Hãy cùng đi sâu vào chi tiết để xem LangChain hoạt động như thế nào, nó mang lại những lợi ích gì cho cộng đồng phát triển, và làm thế nào bạn có thể bắt đầu sử dụng nó trong các dự án của mình nhé!
+
+<TOCInline toc={props.toc} exclude="Giới thiệu" /> 
+
+## LangChain Là Gì?
+
+LangChain là một framework mã nguồn mở giúp các nhà phát triển có thể tạo ra ứng dụng sử dụng các mô hình ngôn ngữ lớn như GPT3 hay GPT4. Điều đặc biệt của LangChain là khả năng tổ chức các lệnh (prompt) một cách linh hoạt, giúp tối đa hóa sự tương tác giữa các lệnh này.
+
+Ban đầu, LangChain chỉ là một dự án nguồn mở. Nhưng với sự gia tăng nhanh chóng về số lượng "sao" trên GitHub, nó đã nhanh chóng biến thành một công ty dưới sự lãnh đạo của Harrison Chase.
+Các mô hình ngôn ngữ lớn cung cấp kết quả cho single prompts, nhưng LangChain thì cho phép tạo ra nhiều kết nối giữa các lệnh để tối ưu hóa quy trình chạy ứng dụng, đồng thời cho phép người dùng thêm khả năng phát triển thêm nhiều khả năng khác.
+
+## Lượng tử hoá nhưng không giảm độ chính xác
+
+Một nhược điểm lớn của việc sử dụng phương pháp lượng tử hoá đó chính là giảm độ chính xác của mô hình đó. Với một bài nghiên cứu gần đây của Qualcomm Technologies đã giúp phát triển ra những phương pháp khác nhau nhằm giải quyết vấn đề giảm độ chính xác của phương pháp này.
+
+“Relaxed Quantization for Discretized Neural Networks” Đã sử dụng một phương pháp mới để chuẩn bị những mô hình trí tuệ nhân tạo cho quá trình lượng tử hoá trong giai đoạn huấn luyện (Training). Kết quả là những mô hình sử dụng phương pháp này đảm bảo được độ chính xác cao hơn so với các phương pháp khác.
+
+Trong bài nghiên cứu "Understanding Straight-Through Estimator in Training Activation Quantized Neural Nets" giúp chúng ta hiểu sâu hơn về phương pháp Straight-through estimator (STE), là một phương pháp được sử dụng rộng rãi trong quá trình huấn luyện quantization-aware. Nghiên cứu này đã chứng minh được qua sự chọn lọc phương pháp STE, một mô hình đã lượng tử hoá có thể đảm bảo độ chính xác cao, và cũng ngược lại khi sử dụng các phương pháp STE không phù hợp có thể dẫn đến một mô hình không ổn định và độ chí xác thấp.
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Maple](https://images.unsplash.com/photo-1707197066378-36583db5e892?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Lake](/static/images/canada/lake.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Mountains](/static/images/canada/mountains.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Toronto](/static/images/canada/toronto.jpg)
+  </div>
+</div>
+
+## Tổng kết
+
+Sự gia tăng nhu cầu sử dụng Trí tuệ nhân tạo (AI) đã đẩy các doanh nghiệp lớn đầu tư đáng kể vào dự án và cơ sở hạ tầng. Phương pháp Lượng tử hoá được đề xuất như một cách để giảm yêu cầu phần cứng và tối ưu hiệu năng của mô hình AI. Mặc dù lượng tử hoá có thể giảm độ chính xác, các nghiên cứu mới đề xuất phương pháp như "Relaxed Quantization" và "Straight-through estimator" để duy trì độ chính xác cao trong quá trình lượng tử hoá. Điều này giúp tăng hiệu suất và giảm chi phí truy cập bộ nhớ của hệ thống, đồng thời đảm bảo hiệu năng và độ chính xác của mô hình AI.
+

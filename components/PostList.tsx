@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from './Image'
 import Link from 'next/link'
 import Tag from '@/components/Tag'
 import { formatDate } from 'pliny/utils/formatDate'
@@ -13,7 +13,10 @@ export default function PostList({ displayPosts }) {
         const displayImage =
           images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
         return (
-          <li key={path} className="mt-2 p-4">
+          <li
+            key={path}
+            className="mt-2 rounded-xl border-2 border-white border-opacity-10 p-4 hover:border-opacity-30 hover:backdrop-brightness-50"
+          >
             <article className="space-y-2 xl:grid xl:grid-cols-5 xl:items-start xl:gap-4 xl:space-y-0">
               <div className="xl:col-span-2">
                 <Image
@@ -21,18 +24,12 @@ export default function PostList({ displayPosts }) {
                   alt={`${title} thumbnail`}
                   height={400}
                   width={800}
-                  objectFit="cover"
-                  objectPosition="center"
-                  className="mb-4 rounded-md"
-                  unoptimized
                 />
               </div>
               <div className="space-y-3 xl:col-span-3">
                 <div>
                   <h3 className=" mb-2 text-2xl font-bold leading-8 tracking-tight  hover:text-gray-200">
-                    <Link href={`/${path}`} className="text-foreground">
-                      {title}
-                    </Link>
+                    <Link href={`/${path}`}>{title}</Link>
                   </h3>
                   <div className="flex flex-wrap space-x-3">
                     {tags?.map((tag) => <Tag key={tag} text={tag} />)}
