@@ -75,6 +75,10 @@ module.exports = () => {
           protocol: 'https',
           hostname: 'images.unsplash.com',
         },
+        {
+          protocol: 'https',
+          hostname: 'readymadeui.com',
+        },
       ],
     },
     async headers() {
