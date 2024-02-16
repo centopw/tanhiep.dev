@@ -3,8 +3,8 @@ import Link from './Link'
 import Image from 'next/image'
 const FollowCard = () => {
   return (
-    <div className="mt-10 align-middle">
-      <div className="relative isolate overflow-hidden rounded-2xl border-2 border-white border-opacity-15 shadow-2xl sm:px-16 md:py-6 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 ">
+    <div className="mt-10 py-11 align-middle">
+      <div className="relative isolate overflow-hidden rounded-2xl border-2 border-white border-opacity-15 py-10 shadow-2xl sm:px-16 md:py-6 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:py-2 lg:pt-0">
         <Image
           src="/static/images/grid-background.png"
           alt="asd"
