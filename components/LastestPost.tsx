@@ -41,7 +41,7 @@ export default function LastestPost({ posts }) {
                               {title}
                             </Link>
                           </h2>
-                          <div className="flex flex-wrap">
+                          <div className="flex flex-wrap space-x-2">
                             {tags.map((tag) => (
                               <Tag key={tag} text={tag} />
                             ))}
