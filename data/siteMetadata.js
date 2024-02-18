@@ -7,7 +7,7 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://tanhiep.dev',
-  siteRepo: 'https://tanhiep.dev',
+  siteRepo: 'https://github.com/centopw/tanhiep.dev',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
