@@ -1,9 +1,23 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 
 const Hero = () => {
+  const titleRef = useRef(null)
+  const textRef = useRef(null)
+
+  useEffect(() => {
+    gsap.fromTo(titleRef.current, { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 1 })
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.5 }
+    )
+  }, [])
+
   return (
     <>
-      <div className="">
+      <div className="o overflow-hidden">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
@@ -18,11 +32,14 @@ const Hero = () => {
         </div>
         <div className="py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight dark:text-white sm:text-6xl">
+            <h1
+              ref={titleRef}
+              className="text-4xl font-bold tracking-tight dark:text-white sm:text-6xl"
+            >
               Xin chào 👋 <br />
               Mình là <span className="text-red-400">Hiệp Nguyễn</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600  dark:text-gray-200">
+            <p ref={textRef} className="mt-6 text-lg leading-8 text-gray-600  dark:text-gray-200">
               Mình là một lập trình viên, mình thích viết blog để chia sẻ những kiến thức về lập
               trình và những thứ khác!.
             </p>
