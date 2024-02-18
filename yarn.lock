@@ -6418,6 +6418,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gsap@npm:^3.12.5":
+  version: 3.12.5
+  resolution: "gsap@npm:3.12.5"
+  checksum: 60b99dc4482992ba86013963ee9a97a5ec62d480495dd85764788913245aa08cfd202c1df4bbc7592e43d5faa885127bec75f77266f2964fe3d3b559ab63f852
+  languageName: node
+  linkType: hard
+
 "gzip-size@npm:^6.0.0":
   version: 6.0.0
   resolution: "gzip-size@npm:6.0.0"
@@ -11567,6 +11574,7 @@ __metadata:
     eslint-plugin-prettier: ^5.0.0
     github-slugger: ^1.4.0
     gray-matter: ^4.0.3
+    gsap: ^3.12.5
     husky: ^8.0.0
     image-size: 1.0.0
     lint-staged: ^13.0.0
