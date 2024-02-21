@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <div className="mb-8 border-b-2 border-transparent text-sm text-gray-400 hover:border-gray-400">
           <Link className="font-bold " href={siteMetadata.siteRepo}>
-            This site is open source on GitHub!
+            <span className="text-red-500">{siteMetadata.title}</span> is open source on GitHub!
           </Link>
         </div>
       </div>

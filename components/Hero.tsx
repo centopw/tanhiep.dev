@@ -34,27 +34,25 @@ const Hero = () => {
           <div className="text-center">
             <h1
               ref={titleRef}
-              className="text-4xl font-bold tracking-tight dark:text-white sm:text-6xl"
+              className="text-4xl font-light tracking-tight transition-all duration-500 hover:font-bold  dark:text-white sm:text-6xl"
             >
-              Xin chào 👋 <br />
-              Mình là <span className="text-red-400">Hiệp Nguyễn</span>
+              tanhiep<span className="ml-1 rounded-lg bg-red-500 p-1 text-2xl">.dev</span>
             </h1>
-            <p ref={textRef} className="mt-6 text-lg leading-8 text-gray-600  dark:text-gray-200">
-              Mình là một lập trình viên, mình thích viết blog để chia sẻ những kiến thức về lập
-              trình và những thứ khác!.
+            <p ref={textRef} className="mt-6 text-lg leading-8  text-gray-600 dark:text-gray-200">
+              A Designer and Developer who love to create beautiful and functional user interfaces
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="/blog"
+                href="/about"
                 className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Tất cả bài viết
+                Learn more
               </a>
               <a
                 href="/about"
                 className="border-b-2 border-transparent text-sm font-semibold leading-6 text-red-400 hover:border-red-300 hover:text-red-300"
               >
-                CV của mình<span aria-hidden="true">→</span>
+                My blog<span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
