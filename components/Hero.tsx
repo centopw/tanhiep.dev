@@ -44,13 +44,13 @@ const Hero = () => {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="/about"
-                className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Learn more
               </a>
               <a
                 href="/about"
-                className="border-b-2 border-transparent text-sm font-semibold leading-6 text-red-400 hover:border-red-300 hover:text-red-300"
+                className="border-b-2 border-transparent text-sm font-semibold leading-6 text-red-400 hover:border-red-500 hover:text-red-500"
               >
                 My blog<span aria-hidden="true">→</span>
               </a>
