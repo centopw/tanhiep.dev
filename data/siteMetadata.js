@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'tanhiep/blog',
   author: 'Hiep Nguyen',
   headerTitle: 'tanhiep.dev',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'News, tips, and insights from the team',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://tanhiep.dev',
