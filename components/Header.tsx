@@ -2,6 +2,7 @@ import headerNavLinks from '@/data/headerNavLinks'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import Image from './Image'
+import ThemeSwitch from './ThemeSwitch'
 const Header = () => {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 mt-0 w-full md:mt-4">
@@ -28,6 +29,9 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <ThemeSwitch />
+              </li>
             </ul>
           </div>
         </div>
